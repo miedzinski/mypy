@@ -543,8 +543,8 @@ def report_internal_error(err: Exception, file: str, line: int,
     # If requested, drop into pdb. This overrides show_tb.
     if options.pdb:
         print('Dropping into pdb', file=sys.stderr)
-        import pdb
-        pdb.post_mortem(sys.exc_info()[2])
+        import pudb
+        pudb.post_mortem(sys.exc_info()[2])
 
     # If requested, print traceback, else print note explaining how to get one.
     if not options.show_traceback:
